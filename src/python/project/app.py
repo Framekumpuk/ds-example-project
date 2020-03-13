@@ -15,7 +15,7 @@ HOME_DIR = os.environ.get('OPENSHIFT_HOMEDIR', os.getcwd())
 def model():
     """http://127.0.0.1:8080/?number=16"""
     number = request.args.get('number', default=38, type=int)
-    return 'กำลังสองของ {} คือ {} จ้า'.format(number, power(number))
+    return 'รากที่สองของ {} คือ {} จ้า'.format(number, sqrt(number))
 
 
 if __name__ == '__main__':
