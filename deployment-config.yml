@@ -31,7 +31,7 @@ objects:
         - type: ConfigChange
         - type: ImageChange
           imageChangeParams:
-            automatic: true
+            automatic: false
             containerNames:
               - ${APPLICATION_NAME}
             from:
