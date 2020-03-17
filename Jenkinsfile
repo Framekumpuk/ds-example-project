@@ -38,16 +38,5 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Application') {
-            steps {
-                script {
-                    openshift.withCluster() {
-                        openshift.withProject() {
-                            openshiftDeploy(deploymentConfig: '${APPLICATION_NAME}')
-                        }
-                    }
-                }
-            }
-        }
     }
 }
