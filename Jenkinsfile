@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        APPLICATION_NAME = 'ds-example-project-dev'
+        APPLICATION_NAME = 'ds-example-project'
     }
 
     stages {
