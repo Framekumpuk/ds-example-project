@@ -32,7 +32,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            openshiftBuild(buildConfig: '${APPLICATION_NAME}', showBuildLogs: 'true')
+                            openshiftBuild(buildConfig: '${APPLICATION_NAME}-${env.BUILD_ID}', showBuildLogs: 'true')
                         }
                     }
                 }
@@ -43,7 +43,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            openshiftDeploy(deploymentConfig: '${APPLICATION_NAME}')
+                            openshiftDeploy(deploymentConfig: '${APPLICATION_NAME}-${env.BUILD_ID}')
                         }
                     }
                 }
