@@ -39,6 +39,7 @@ pipeline {
             }
         }
         stage('Deploy Application') {
+            input("Promote to TEST?")
             steps {
                 script {
                     openshift.withCluster() {
