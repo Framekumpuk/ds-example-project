@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        APPLICATION_NAME = 'ds-example-project'
+        APPLICATION_NAME = 'ds-example-project-dev'
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            openshiftBuild(buildConfig: '${APPLICATION_NAME}-${env.BUILD_ID}', showBuildLogs: 'true')
+                            openshiftBuild(buildConfig: '${APPLICATION_NAME}', showBuildLogs: 'true')
                         }
                     }
                 }
@@ -43,7 +43,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
-                            openshiftDeploy(deploymentConfig: '${APPLICATION_NAME}-${env.BUILD_ID}')
+                            openshiftDeploy(deploymentConfig: '${APPLICATION_NAME}')
                         }
                     }
                 }
