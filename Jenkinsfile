@@ -39,8 +39,8 @@ pipeline {
             }
         }
         stage('Deploy Application') {
-            input("Promote to TEST?")
             steps {
+                input("Promote to TEST?")
                 script {
                     openshift.withCluster() {
                         openshift.withProject() {
